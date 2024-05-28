@@ -6,6 +6,7 @@ package com.example.demo;
 
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.lang.Console;
 
 /**
  * HuTooLDemi
@@ -21,6 +22,7 @@ public class HuTooLDemo {
 
 
         String unicode = Convert.strToUnicode("字符串");
+        Console.log(unicode);
 
         int second = DateUtil.timeToSecond("08:30");
 
@@ -28,8 +30,11 @@ public class HuTooLDemo {
 
         System.out.println(second);
 
-
         System.out.println(time);
+        String[] a = {"abc", "bcd"};
+
+        Console.log(a);
+
 
     }
 
