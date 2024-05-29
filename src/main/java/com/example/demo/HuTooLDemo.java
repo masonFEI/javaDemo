@@ -7,6 +7,9 @@ package com.example.demo;
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.lang.Console;
+import cn.hutool.db.ds.DSFactory;
+import cn.hutool.setting.Setting;
+import org.junit.Test;
 
 /**
  * HuTooLDemi
@@ -36,6 +39,13 @@ public class HuTooLDemo {
         Console.log(a);
 
 
+    }
+
+    @Test
+    public void dbDemo() {
+        Setting setting = new Setting();
+
+        DSFactory.create(setting);
     }
 
 }
