@@ -7,6 +7,7 @@ package com.example.demo;
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.lang.Console;
+import cn.hutool.crypto.digest.DigestUtil;
 import cn.hutool.db.ds.DSFactory;
 import cn.hutool.setting.Setting;
 import org.junit.Test;
@@ -46,6 +47,11 @@ public class HuTooLDemo {
         Setting setting = new Setting();
 
         DSFactory.create(setting);
+    }
+
+    @Test
+    public void cryptoDemo() {
+        byte[] bytes = DigestUtil.md5("1234567890123456789012345678901");
     }
 
 }
