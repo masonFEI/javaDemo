@@ -6,6 +6,7 @@ package com.example.demo;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.util.DigestUtils;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -27,11 +28,7 @@ public class base64Demo {
     public static int DIGEST_LENGTH = 1 << 4;
     public static byte[] digestTarget;
     public static int DST_LENGTH = 4 * ((DIGEST_LENGTH + 2) / 3);
-    private String errorCode;
-    private String errorMessage;
-    private boolean success;
     private String traceId;
-
 
     //   w3GnyrjE6ffi/COWRFsVTw==
     //   w3GnyrjE6ffi/COWRFsVTw==
@@ -55,6 +52,12 @@ public class base64Demo {
             throw new RuntimeException(e);
         }
 
+        String tmpString = "郑州市驻马店市漯河市ZZFLBNTLBNZLNTG851G3483";
+        String md5 = DigestUtils.md5DigestAsHex(tmpString.getBytes(StandardCharsets.UTF_8)).toUpperCase();
+        System.out.println(md5);
+//        76ABC140EFDF8862C37C19D9B93F0074
+//        76ABC140EFDF8862C37C19D9B93F0074
+//        76abc140efdf8862c37c19d9b93f0074
 
     }
 
