@@ -11,9 +11,7 @@ import java.util.List;
 
 public class PolymorphicDeserializationDemo {
 
-
     // 父类
-    @Data
     public static class Animal {
         private String name;
         private int type; // 用于区分子类的字段
@@ -38,11 +36,11 @@ public class PolymorphicDeserializationDemo {
     // 子类 Cat
     @Data
     public static class Cat extends Animal {
-
         private int age;
+
         @Override
         public String toString() {
-            return "Cat{name='" + getName() + "'}";
+            return "Cat{name='" + getName() + "', age=" + age + "}";
         }
     }
 
@@ -50,9 +48,60 @@ public class PolymorphicDeserializationDemo {
     @Data
     public static class Dog extends Animal {
         private int size;
+
         @Override
         public String toString() {
-            return "Dog{name='" + getName() + "'}";
+            return "Dog{name='" + getName() + "', size=" + size + "}";
+        }
+    }
+
+    // 新增的 Zoo 类，用于表示新的 JSON 结构
+    public static class Zoo {
+        private String zooName;
+        private String openTime;
+        private String closeTime;
+        private List<Animal> animals;
+
+        public String getZooName() {
+            return zooName;
+        }
+
+        public void setZooName(String zooName) {
+            this.zooName = zooName;
+        }
+
+        public String getOpenTime() {
+            return openTime;
+        }
+
+        public void setOpenTime(String openTime) {
+            this.openTime = openTime;
+        }
+
+        public String getCloseTime() {
+            return closeTime;
+        }
+
+        public void setCloseTime(String closeTime) {
+            this.closeTime = closeTime;
+        }
+
+        public List<Animal> getAnimals() {
+            return animals;
+        }
+
+        public void setAnimals(List<Animal> animals) {
+            this.animals = animals;
+        }
+
+        @Override
+        public String toString() {
+            return "Zoo{" +
+                    "zooName='" + zooName + '\'' +
+                    ", openTime='" + openTime + '\'' +
+                    ", closeTime='" + closeTime + '\'' +
+                    ", animals=" + animals +
+                    '}';
         }
     }
 
@@ -87,18 +136,16 @@ public class PolymorphicDeserializationDemo {
     }
 
     public static void main(String[] args) {
-        String jsonStr = "[{\"type\":1,\"name\":\"Buddy\",\"age\":3},{\"type\":2,\"name\":\"Whiskers\",\"size\":13}]";
+        String jsonStr = "{\"zooName\": \"zz\", \"openTime\": \"07:00\", \"closeTime\": \"20:00\", \"animals\": [{\"type\": 1, \"name\": \"Buddy\", \"age\": 3}, {\"type\": 2, \"name\": \"Whiskers\", \"size\": 13}]}";
 
         // 注册自定义反序列化器
         ParserConfig.getGlobalInstance().putDeserializer(Animal.class, new AnimalDeserializer());
 
-        // 反序列化 JSON 字符串为 Animal 列表
-        List<Animal> animals = JSON.parseArray(jsonStr, Animal.class);
+        // 反序列化 JSON 字符串为 Zoo 对象
+        Zoo zoo = JSON.parseObject(jsonStr, Zoo.class);
 
         // 输出结果
-        for (Animal animal : animals) {
-            System.out.println(animal.toString());
-        }
+        System.out.println(zoo.toString());
     }
 
 }
