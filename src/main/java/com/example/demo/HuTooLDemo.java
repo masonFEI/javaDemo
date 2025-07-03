@@ -4,13 +4,7 @@
  */
 package com.example.demo;
 
-import cn.hutool.core.convert.Convert;
-import cn.hutool.core.date.DateUtil;
-import cn.hutool.core.lang.Console;
-import cn.hutool.crypto.digest.DigestUtil;
-import cn.hutool.db.ds.DSFactory;
-import cn.hutool.setting.Setting;
-import org.junit.Test;
+
 
 /**
  * HuTooLDemi
@@ -24,35 +18,18 @@ public class HuTooLDemo {
 
     public static void main(String[] args) {
 
+        int end = 10;
+        int maxCount = 5;
 
-        String unicode = Convert.strToUnicode("字符串");
-        Console.log(unicode);
+        for (int i = end - 1, j = maxCount; i >= 0 && j > 0; i--, j--) {
+            System.out.println(i);
+            System.out.println(j);
+        }
 
-        int second = DateUtil.timeToSecond("08:30");
-
-        String time = DateUtil.secondToTime(500);
-
-        System.out.println(second);
-
-        System.out.println(time);
-        String[] a = {"abc", "bcd"};
-
-        Console.log(a);
-
+        System.out.println(maxCount);
 
     }
 
-    @Test
-    public void dbDemo() {
-        Setting setting = new Setting();
-
-        DSFactory.create(setting);
-    }
-
-    @Test
-    public void cryptoDemo() {
-        byte[] bytes = DigestUtil.md5("1234567890123456789012345678901");
-    }
 
 }
 
