@@ -10,7 +10,12 @@ import cn.hutool.core.lang.Console;
 import cn.hutool.crypto.digest.DigestUtil;
 import cn.hutool.db.ds.DSFactory;
 import cn.hutool.setting.Setting;
+import com.google.common.collect.Lists;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * HuTooLDemi
@@ -25,22 +30,36 @@ public class HuTooLDemo {
     public static void main(String[] args) {
 
 
-        String unicode = Convert.strToUnicode("字符串");
-        Console.log(unicode);
+        List<Integer> list = Lists.newArrayList(2, 3, 7, 8, 6, 5, 4);
 
-        int second = DateUtil.timeToSecond("08:30");
 
-        String time = DateUtil.secondToTime(500);
+        doSort(list);
 
-        System.out.println(second);
 
-        System.out.println(time);
-        String[] a = {"abc", "bcd"};
+        System.out.println(list);
 
-        Console.log(a);
+//        String unicode = Convert.strToUnicode("字符串");
+//        Console.log(unicode);
+//
+//        int second = DateUtil.timeToSecond("08:30");
+//
+//        String time = DateUtil.secondToTime(500);
+//
+//        System.out.println(second);
+//
+//        System.out.println(time);
+//        String[] a = {"abc", "bcd"};
+//
+//        Console.log(a);
 
 
     }
+
+
+    private static void doSort(List<Integer> list ) {
+        list.sort(Comparator.comparingInt(Convert::toInt));
+    }
+
 
     @Test
     public void dbDemo() {
