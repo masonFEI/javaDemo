@@ -13,6 +13,10 @@ import cn.hutool.setting.Setting;
 import com.google.common.collect.Lists;
 import org.junit.Test;
 
+import com.google.common.collect.Lists;
+
+import java.util.ArrayList;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -55,17 +59,8 @@ public class HuTooLDemo {
 
     }
 
-
-    private static void doSort(List<Integer> list ) {
+    private static void doSort(List<Integer> list) {
         list.sort(Comparator.comparingInt(Convert::toInt));
-    }
-
-
-    @Test
-    public void dbDemo() {
-        Setting setting = new Setting();
-
-        DSFactory.create(setting);
     }
 
     @Test
