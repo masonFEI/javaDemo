@@ -5,6 +5,9 @@
 package com.example.demo;
 
 
+import com.google.common.collect.Lists;
+
+import java.util.ArrayList;
 
 /**
  * HuTooLDemi
@@ -18,15 +21,12 @@ public class HuTooLDemo {
 
     public static void main(String[] args) {
 
-        int end = 10;
-        int maxCount = 5;
 
-        for (int i = end - 1, j = maxCount; i >= 0 && j > 0; i--, j--) {
-            System.out.println(i);
-            System.out.println(j);
-        }
+        ArrayList<String> arrayList = Lists.newArrayList("1", "2", "3", "4", "5");
 
-        System.out.println(maxCount);
+        System.out.println(arrayList.subList(0, 3));
+        System.out.println(arrayList);
+
 
     }
 
