@@ -4,8 +4,6 @@
  */
 package com.example.demo;
 
-import java.io.File;
-
 /**
  * FileDemo
  *
@@ -17,13 +15,13 @@ public class FileDemo {
 
 
     public static void main(String[] args) {
-        String response = "";
-        File file = new File("D:\\code\\javaProject\\TC.WisdomTravel.Transfer.FrontStage.Union\\TransferplanGatewayMain\\src\\main\\resources\\env\\test\\sameTrain.txt");
-
-        try {
-            response = FileUtils.readFileToString(file, "utf-8");
-        } catch (Exception e) {
-        }
+//        String response = "";
+//        File file = new File("D:\\code\\javaProject\\TC.WisdomTravel.Transfer.FrontStage.Union\\TransferplanGatewayMain\\src\\main\\resources\\env\\test\\sameTrain.txt");
+//
+//        try {
+//            response = FileUtils.readFileToString(file, "utf-8");
+//        } catch (Exception e) {
+//        }
     }
 
 
