@@ -7,6 +7,9 @@ package com.example.demo;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
 
 /**
  * FileDemo
@@ -19,6 +22,12 @@ public class FileDemo {
 
 
     public static void main(String[] args) {
+        List<String> existAirports = null;
+
+        Collection<String> airports = new HashSet<>(existAirports);
+
+        airports.add("aaa");
+
         String invokeString = "";
         File file = new File("D:\\code\\javaProject\\TC.WisdomTravel.Transfer.FrontStage.Union\\TransferplanGatewayMain\\src\\main\\resources\\env\\test\\sameTrain.txt");
         try {
