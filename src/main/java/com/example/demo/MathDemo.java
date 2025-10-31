@@ -46,6 +46,10 @@ public class MathDemo {
         System.out.println("Math.round:" + (System.currentTimeMillis() - start));
 
         System.out.println(1);
+
+
+        double v2 = (double) (1540 - 80) / 1540;
+        System.out.println(v2);
     }
 
 }
