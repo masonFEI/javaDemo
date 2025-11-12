@@ -20,6 +20,11 @@ public class MathDemo {
 
     public static void main(String[] args) {
 
+        String price = "";
+
+        Double salePrice = Double.valueOf(price);
+
+
         DecimalFormat df = new DecimalFormat("0.00000000");
 
         long start = System.currentTimeMillis();
