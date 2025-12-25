@@ -7,6 +7,7 @@ package com.example.demo;
 import com.google.common.collect.Lists;
 import lombok.Data;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,6 +23,20 @@ public class HeapDemo {
 
 
     public static void main(String[] args) {
+
+
+        Map<String, List<String>> relateSchemesMap = new HashMap<String, List<String>>() {
+            {
+                put("1", Lists.newArrayList("d", "e"));
+                put("2", Lists.newArrayList("f", "g"));
+            }
+        };
+
+        List<String> list = new ArrayList<>();
+
+        list.addAll(relateSchemesMap.get("1"));
+        list.addAll(relateSchemesMap.get("3"));
+
 
         List<String> defaults = Lists.newArrayList("a", "b", "c");
 
