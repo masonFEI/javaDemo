@@ -1,0 +1,18 @@
+src/main/java/com/example/juc/VolatileDemo.java
+  h_996c2add31e3eb 1-19,21-25,27-28,30-37,42-51,53,56-60
+  h_e501752fc60351 20,26,29,38-41,52,54-55
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.24",
+  "base_commit_sha": "73e4be2f5317612054216704c5bb039f7a17b4d0",
+  "prompts": {},
+  "humans": {
+    "h_996c2add31e3eb": {
+      "author": "feixuanyu <johnny.fei@ly.com>"
+    },
+    "h_e501752fc60351": {
+      "author": "masonFEI <994085848@qq.com>"
+    }
+  }
+}
