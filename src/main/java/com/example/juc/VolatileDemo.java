@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 public class VolatileDemo {
 
-    private static volatile int    flag = 0;
+    private static volatile int flag = 0;
     private static volatile String name = "johnny";
 
     public static void main(String[] args) {

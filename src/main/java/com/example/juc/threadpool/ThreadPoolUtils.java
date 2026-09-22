@@ -25,7 +25,7 @@ public class ThreadPoolUtils {
      */
     public static ThreadPoolExecutor initThreadPool() {
         return new ThreadPoolExecutor(2, 2, 60, TimeUnit.SECONDS, new LinkedBlockingDeque<>(15), Executors.defaultThreadFactory(),
-            new ThreadPoolExecutor.CallerRunsPolicy());
+                new ThreadPoolExecutor.CallerRunsPolicy());
     }
 
     /**
