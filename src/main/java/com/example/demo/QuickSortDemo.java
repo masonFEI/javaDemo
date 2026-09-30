@@ -35,10 +35,8 @@ public class QuickSortDemo {
         int pivot = nums.get(left);
         int loopLeft = left;
         int loopRight = right;
-
         // 0,从右开始；1，从左开始
         int flag = 0;
-
         while (loopLeft < loopRight) {
             // 从右开始
             if (flag == 0) {
@@ -50,7 +48,6 @@ public class QuickSortDemo {
                 nums.set(loopLeft, nums.get(loopRight));
                 flag = 1;
             }
-
             // 翻转，从左开始
             if (flag == 1) {
                 if (nums.get(loopLeft) < pivot) {
@@ -62,12 +59,9 @@ public class QuickSortDemo {
                 flag = 0;
             }
         }
-
         nums.set(loopLeft, pivot);
-
         quickSortStep(nums, left, loopLeft - 1);
         quickSortStep(nums, loopLeft + 1, right);
-
     }
 
 
